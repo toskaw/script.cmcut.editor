@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.cmcut.editor"
+       name="CM cut editor"
+      version="0.0.1"
+      provider-name="toskawa">
+    <requires>
+        <import addon="xbmc.addon" version="12.0.0"/>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.simplejson" version="2.0.10" />
+	<import addon="script.module.web-pdb" />
+    </requires>
+    <extension point="xbmc.python.script" library="default.py" />
+    <extension point="xbmc.addon.metadata">
+
+    <platform>all</platform>
+    <summary lang="en">Create EDL files to skip content.</summary>
+    <language></language>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+    <forum></forum>
+    <source></source>
+    <email></email>
+    <disclaimer lang="en"></disclaimer>
+  </extension>
+</addon>
