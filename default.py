@@ -37,6 +37,9 @@ import xbmcaddon
 import xbmcgui
 import xbmcvfs
 
+def _(id):
+    return xbmcaddon.Addon().getLocalizedString(id)
+
 def sendJSON(method, json_params = {}):
 
     #This the generated JSON-RPC query code
@@ -164,8 +167,8 @@ class EDLPlayer(xbmc.Player):
 writer = EDLWriter()
 player = EDLPlayer(writer=writer)
 
-notify("Script started.")
+notify(_(60001))
 while player.is_active:
     xbmc.sleep(1000)
 
-notify("EDL script stopped.")
+notify(_(60002))

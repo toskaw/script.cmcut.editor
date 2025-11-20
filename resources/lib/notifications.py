@@ -16,7 +16,7 @@
 import xbmcgui
 
 def notify(message):
-    xbmcgui.Dialog().notification("EDL Creator", message)
+    xbmcgui.Dialog().notification("CM cut editor", message)
 
 def yesno(message):
-    return xbmcgui.Dialog().yesno("EDL Creator", message)
+    return xbmcgui.Dialog().yesno("CM cut editor", message)
