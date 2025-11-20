@@ -144,7 +144,7 @@ class EDLWriter(object):
     def selectItem(self):
         menu = [(CANCEL, "Cancel")]
         for index, item in enumerate(self.edllist):
-            menu.append((index, format(item["start"], ".3f") + " sec - " + format(item["end"], ".3f") + "sec"))
+            menu.append((index, format(item["start"], ".3f") + " sec - " + format(item["end"], ".3f") + " sec"))
         item = Select(_(60016), [x[1] for x in menu])
         return menu[item][0]
         
