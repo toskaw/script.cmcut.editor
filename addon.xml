@@ -9,18 +9,19 @@
         <import addon="script.module.simplejson" version="2.0.10" />
     </requires>
     <extension point="xbmc.python.script" library="default.py" />
+    <extension point="xbmc.service" library="service.py" />
     <extension point="xbmc.addon.metadata">
 
-    <platform>all</platform>
-    <summary lang="en">Create EDL files to skip content.</summary>
-    <language></language>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
-    <forum></forum>
-    <source></source>
-    <email></email>
-    <disclaimer lang="en"></disclaimer>
-    <assets>
-      <icon>resources/icon.png</icon>
-    </assets>
- </extension>
+      <platform>all</platform>
+      <summary lang="en">Create EDL files to skip content.</summary>
+      <language></language>
+      <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+      <forum></forum>
+      <source></source>
+      <email></email>
+      <disclaimer lang="en"></disclaimer>
+      <assets>
+	<icon>resources/icon.png</icon>
+      </assets>
+    </extension>
 </addon>

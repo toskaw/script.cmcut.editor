@@ -28,7 +28,7 @@
 
 import simplejson as json
 from os.path import splitext, basename
-
+import sys
 from resources.lib.notifications import notify
 from resources.lib.edlwriter import EDLWriter
 
@@ -106,7 +106,7 @@ class EDLPlayer(xbmc.Player):
         xbmc.sleep(s)
 
     def addPoint(self, marktime):
-        self.writer.AddPoint(marktime, self)
+        res = self.writer.AddPoint(marktime, self)
         # If we're here, we should have added a marker so we can re-enable
         # event handling
         self.is_marking = False
@@ -166,9 +166,16 @@ class EDLPlayer(xbmc.Player):
 
 writer = EDLWriter()
 player = EDLPlayer(writer=writer)
-
-notify(_(60001))
-while player.is_active:
-    xbmc.sleep(1000)
-
-notify(_(60002))
+# check already executed
+flag = xbmcaddon.Addon().getSetting(id='exec_lock')
+xbmc.log(f'flag ={flag}', xbmc.LOGINFO)
+if flag != 'True':
+    xbmcaddon.Addon().setSetting(id='exec_lock', value='True')
+    notify(_(60001))
+    while player.is_active:
+        xbmc.sleep(1000)
+    notify(_(60002))
+    xbmcaddon.Addon('script.cmcut.editor').setSetting(id='exec_lock', value='False')
+else:
+    notify(_(60019))
+    

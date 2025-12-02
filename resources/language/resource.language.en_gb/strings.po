@@ -102,3 +102,8 @@ msgstr ""
 msgctxt "#60018"
 msgid "EDL file written successfully!"
 msgstr ""
+
+#: resources/lib/edlwriter.py:63
+msgctxt "#60019"
+msgid "Already started"
+msgstr ""

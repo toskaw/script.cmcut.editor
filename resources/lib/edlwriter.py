@@ -14,7 +14,7 @@
 '''
 
 import xbmcgui, xbmc, xbmcvfs, xbmcaddon
-
+import sys
 from resources.lib.notifications import notify, yesno
 
 # Set to True if you want to be able to adjust marker time
@@ -48,6 +48,7 @@ ADD_POINT = 0
 DELETE_LIST_ITEM = 1 
 CANCEL = -1
 
+
 Select = xbmcgui.Dialog().select
 
 MENU_LIST = [(BIG_STEP_BACK, _(60003)),
@@ -58,7 +59,8 @@ MENU_LIST = [(BIG_STEP_BACK, _(60003)),
 
 ACTION_LIST = [(ADD_POINT, _(60008)),
                (DELETE_LIST_ITEM, _(60009)),
-               (CANCEL, _(60010))]
+               (CANCEL, _(60010)),
+               ]
 
 class EDLWriter(object):
     def __init__(self, default = EDL_COMMERCIAL_BREAK):
@@ -102,7 +104,7 @@ class EDLWriter(object):
             self.ExecDelete()
         else:
             pass
-        
+        return action
     def ExecAddPoint(self, marktime, player):
         # Check if this the first marker
         if not self.is_open and self.first:
