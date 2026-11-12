@@ -79,11 +79,11 @@ class EDLWriter(object):
         
     def ReadEdl(self, totaltime):
         editlist =  xbmc.getInfoLabel('Player.Editlist')
+        self.totaltime = totaltime
         if editlist == "":
             return
         edl = editlist.split(",")
         self.current = {}
-        self.totaltime = totaltime
         for index, val in enumerate(edl):
             time = float(val) * totaltime / 100
             if not (index % 2) :
